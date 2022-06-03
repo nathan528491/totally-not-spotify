@@ -1,0 +1,101 @@
+.navMenuList {
+    display: flex;
+    flex-direction: column;
+    height: 120px;
+    width: 100%;
+}
+
+.navMenuListItem {
+    padding: 0 8px;
+    width: 100%;
+    height: 40px;
+}
+
+.navMenuLinkBox {
+    width: 100%;
+    height: 100%;
+    padding: 0 16px;
+    font-weight: 700;
+    font-size: 0.8125rem;
+    color:#b3b3b3;
+    transition: color 0.15s ease-in-out;
+}
+.navMenuLinkBox:hover {
+    color: #fff;
+    transition: color 0.15s ease-in-out;
+}
+
+.navMenuListIcon {
+    font-size: 24px;
+    margin-right: 16px !important;
+}
+
+.navMenuLinkOverlay {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+}
+
+
+
+
+
+.musicMenuList {
+    height: calc(100vh - 322px);
+    width: 100%;
+}
+
+.musicMenuListItem {
+    padding: 8px 24px;
+    width: 100%;
+    height: 40px;
+}
+.musicMenuLinkBox {
+    width: 100%;
+    height: 100%;
+    font-weight: 700;
+    font-size: 0.8125rem;
+    color:#b3b3b3;
+    transition: color 0.15s ease-in-out;
+}
+
+.musicMenuLinkBox:hover {
+    color: #fff;
+    transition: color 0.15s ease-in-out;
+}
+
+.musicMenuListIcon {
+    font-size: 24px;
+    margin-right: 16px !important;
+}
+.musicMenuLinkOverlay {
+    display: flex;
+    align-items: center;
+}
+
+.playlistListItem {
+    height: 32px;
+}
+
+.playlistLinkBox {
+    height: 100%;
+    font-weight: 400;
+    line-height: 1.25rem;
+    font-size: 0.875rem;
+    font-family: Helvetica, Arial, sans-serif;
+    color: #b3b3b3;
+    transition: color;
+}
+.playlistLinkBox:hover {
+    color: #fff;
+    transition: color;
+}
+
+.playlistLinkOverlay {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
