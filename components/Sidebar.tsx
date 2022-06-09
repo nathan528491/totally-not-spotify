@@ -1,6 +1,6 @@
-import {Box, List, ListItem, ListIcon, Divider, Center, LinkBox, LinkOverlay} from "@chakra-ui/layout";
-import {MdHome, MdLibraryMusic, MdPlaylistAdd, MdFavorite, MdBookmark} from "react-icons/Md";
-import {FiSearch} from "react-icons/Fi";
+import {Box, List, ListItem, ListIcon, Divider, LinkBox, LinkOverlay} from "@chakra-ui/layout";
+import {MdHome, MdLibraryMusic, MdPlaylistAdd, MdFavorite, MdBookmark} from "react-icons/md";
+import {FiSearch} from "react-icons/fi";
 import NextImage from "next/image";
 import NextLink from "next/link";
 import styles from "../styles/PlayerLaout.module.css"
@@ -90,6 +90,7 @@ export default function Sidebar() {
                     marginTop="24px"
                     className={styles.musicMenuList}>
                     {/* MUSIC MENU */}
+                    {/* TODO USE ICON BUTTON INSTEAD */}
                     <Box>
                         <List >
                             {musicMenu.map((menu) => (
