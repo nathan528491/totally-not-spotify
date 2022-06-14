@@ -1,17 +1,44 @@
-// import Head from 'next/head'
-// import Image from 'next/image'
-// import styles from '../styles/Home.module.css'
+import {Box, Flex, Text} from '@chakra-ui/layout'
+import prisma from "../lib/prisma";
+import {useMe} from "../lib/hooks";
 import GradientLayout from "../components/GradientLayout";
+import ArtistCard from "../components/ArtistCard";
 
-export default function Home() {
+const image = "https://media.fashionnetwork.com/m/4a47/a367/840d/0877/429b/e8e3/2827/582e/0f41/a5c0/a5c0.jpg"
+
+export default function Home({artists}) {
+    const {user} = useMe()
+
     return (
         <GradientLayout
-            color="red"
-            subtitle="profile"
-            title="Nate"
-            description="Nate is a full-stack developer who loves to build things."
+            image={image}
+            roundImage
+            color="orange"
+            subtitle="profil"
+            title={`${user?.firstName} ${user?.lastName}`}
+            description={`${user?.playlistCount} playlist(s) publique(s) • 3 abonnés • 36 abonnés`}
         >
-            <div>home page</div>
+            <Box color="white" paddingX="16px">
+                <Flex align="center" padding="24px 0">
+                    <Text fontSize="20px" color="#a7a7a7" letterSpacing="-1px">• • •</Text>
+                </Flex>
+                <Box marginBottom="16px">
+                    <Text fontSize="24px" lineHeight="1.75rem" fontWeight="bold">Top artistes du mois</Text>
+                    <Text color="#a7a7a7" fontSize="14px">Visibles uniquement par vous</Text>
+                </Box>
+                <Flex overflowX="auto"> {artists.map(artist => (
+                    <ArtistCard key={artist.id} artist={artist}/>
+                ))}
+                </Flex>
+            </Box>
         </GradientLayout>
     )
+}
+
+export const getServerSideProps = async () => {
+    const artists = await prisma.artist.findMany({})
+
+    return {
+        props: {artists}
+    }
 }

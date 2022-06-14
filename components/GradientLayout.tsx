@@ -18,34 +18,44 @@ export default function GradientLayout({
         >
             <Flex
                 bg={`${color}.600`}
-                padding="40px"
+                padding="0 32px 24px"
                 align="end"
+                height="30vh"
+                maxHeight="500px"
+                minHeight="340px"
             >
-                <Box padding="20px">
+                <Box marginRight="24px">
                     <Image
-                        boxSize="160px"
+                        boxSize="232px"
+                        minWidth="232"
                         boxShadow="2xl"
                         src={image}
                         borderRadius={roundImage ? '100%' : '3px'}
                     />
                 </Box>
-                <Box
-                    color="white"
-                    padding="20px"
-                    lineHeight="40px"
-                >
+                <Box color="white">
                     <Text
-                        fontSize="sm"
+                        fontSize="12px"
                         fontWeight="bold"
                         casing="uppercase"
+                        marginTop="4px"
                     >
                         {subtitle}
                     </Text>
-                    <Text fontSize="6xl">{title}</Text>
-                    <Text fontSize="sm" fontWeight="bold">{description}</Text>
+                    <Text
+                        letterSpacing="-2px"
+                        fontSize="96px"
+                        lineHeight="96px"
+                        fontWeight="bold"
+                        paddingY="8px"
+                    >{title}</Text>
+                    <Text fontSize="sm" marginTop="8px">{description}</Text>
                 </Box>
 
             </Flex>
+            <Box paddingBottom="50px">
+                {children}
+            </Box>
         </Box>
     )
 }

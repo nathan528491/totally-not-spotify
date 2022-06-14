@@ -121,7 +121,10 @@ export default function Sidebar() {
                                 <ListItem key={playlist.id} className={styles.playlistListItem}>
                                     <Box paddingX="24px" height="100%">
                                         <LinkBox className={styles.playlistLinkBox}>
-                                            <NextLink href="/playlist" passHref>
+                                            <NextLink href={{
+                                                pathname: '/playlist/[id]',
+                                                query: {id: playlist.id}
+                                            }} passHref>
                                                 <LinkOverlay className={styles.playlistLinkOverlay}>
                                                     <span>{playlist.name}</span>
                                                 </LinkOverlay>
