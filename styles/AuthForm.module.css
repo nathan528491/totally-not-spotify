@@ -136,3 +136,23 @@
     font-weight: 700;
     padding-bottom: 20px;
 }
+
+.buttonGoToSignUp {
+    display: flex;
+    color:#6a6a6a;
+    border-radius: 500px;
+    background: transparent;
+    border: 1px solid #878787;
+    text-transform: uppercase;
+    font-family: Helvetica, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 0.875rem;
+    padding: 13px 31px;
+    letter-spacing: 2px;
+    justify-content: center;
+    width: 100%;
+}
+
+.buttonGoToSignUp:hover {
+    border-color: #000;
+}

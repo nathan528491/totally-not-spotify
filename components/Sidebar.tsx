@@ -4,6 +4,7 @@ import {FiSearch} from "react-icons/fi";
 import NextImage from "next/image";
 import NextLink from "next/link";
 import styles from "../styles/PlayerLaout.module.css"
+import {usePlaylist} from "../lib/hooks";
 
 const navMenu = [{
     name: 'Accueil',
@@ -33,11 +34,12 @@ const musicMenu = [{
     route: '/episodes'
 }]
 
-const playlists = new Array(30).fill(1).map((_, i) => `Playlist ${i+1}`)
+// const playlists = new Array(30).fill(1).map((_, i) => `Playlist ${i+1}`)
 
 
 
 export default function Sidebar() {
+    const {playlists} = usePlaylist()
     return (
 
         <Box
@@ -116,12 +118,12 @@ export default function Sidebar() {
                     <Box height="calc(100% - 129px)" overflowY="auto" paddingY="8px">
                         <List>
                             {playlists.map((playlist) => (
-                                <ListItem key={playlist} className={styles.playlistListItem}>
+                                <ListItem key={playlist.id} className={styles.playlistListItem}>
                                     <Box paddingX="24px" height="100%">
                                         <LinkBox className={styles.playlistLinkBox}>
                                             <NextLink href="/playlist" passHref>
                                                 <LinkOverlay className={styles.playlistLinkOverlay}>
-                                                    <span>{playlist}</span>
+                                                    <span>{playlist.name}</span>
                                                 </LinkOverlay>
                                             </NextLink>
                                         </LinkBox>
