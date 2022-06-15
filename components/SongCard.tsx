@@ -26,7 +26,7 @@ export default function SongCard({
                 <Image src={image} height="40px" marginRight="16px" flexGrow="0" flexShrink="0"/>
                 <Flex direction="column" whiteSpace="nowrap" textOverflow="ellipsis" overflow="hidden">
                     <Text fontSize="1rem" lineHeight="1.5rem">{title}</Text>
-                    <Text fontSize="1rem" lineHeight="1.5rem" color="#b3b3b3">{artist}</Text>
+                    <Text fontSize="0.875rem" lineHeight="1rem" color="#b3b3b3">{artist}</Text>
                 </Flex>
             </Flex>
 
