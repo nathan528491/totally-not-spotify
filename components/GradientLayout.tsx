@@ -12,14 +12,14 @@ export default function GradientLayout({
 }) {
     return (
         <Box
-            position="sticky"
             height="100%"
             overflowY="auto"
-
+            bg="#121212"
         >
             <Flex
                 bg={`${color}.600`}
                 padding="0 32px 24px"
+                // width="100vw"
                 align="end"
                 height="30vh"
                 maxHeight="500px"
@@ -55,7 +55,7 @@ export default function GradientLayout({
 
             </Flex>
             <Box paddingBottom="50px"
-                bgGradient={`linear(${color}.700 0%, rgba(0,0,0,0.95) 250px)`}>
+                bgGradient={`linear(${color}.700 0%, #121212 250px)`}>
                 {children}
             </Box>
         </Box>

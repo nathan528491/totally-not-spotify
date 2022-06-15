@@ -31,7 +31,7 @@ export default function Playlist({playlist}) {
             subtitle="playlist"
             description={`${playlist.songs.length} titre(s)`}
         >
-            <SongsTable/>
+            <SongsTable songs={playlist.songs}/>
         </GradientLayout>
     )
 
@@ -39,12 +39,23 @@ export default function Playlist({playlist}) {
 
 
 export const getServerSideProps = async ({query, req}) => {
-    const {id} = validateToken(req.cookies.ACCESS_TOKEN)
+    let user
+    try {
+        user = validateToken(req.cookies.ACCESS_TOKEN)
+    } catch (e) {
+        return {
+            redirect: {
+                permanent: false,
+                destination: '/signin'
+            }
+        }
+    }
+
     // @ts-ignore
     const [playlist] = await prisma.playlist.findMany({
         where: {
             id: +query.id,
-            userId: id
+            userId: user.id
         },
         include: {
             songs: {

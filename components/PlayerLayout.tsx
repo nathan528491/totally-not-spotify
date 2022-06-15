@@ -1,5 +1,6 @@
 import {Box} from '@chakra-ui/layout'
 import Sidebar from "./Sidebar"
+import PlayerBar from "./PlayerBar";
 
 export default function PlayerLayout({children}) {
     return (
@@ -11,7 +12,7 @@ export default function PlayerLayout({children}) {
                 {children}
             </Box>
             <Box position="absolute" left="0" bottom="0" backgroundColor="#181818" height="90px" width="100%">
-                player
+                <PlayerBar/>
             </Box>
         </Box>
     )

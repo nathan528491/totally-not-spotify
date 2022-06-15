@@ -1,31 +1,36 @@
 import {Box, Flex, Text} from "@chakra-ui/layout"
-import {Icon} from '@chakra-ui/react'
-import {GrPlayFill} from "react-icons/gr";
+import {Icon, IconButton} from '@chakra-ui/react'
 import {BiTimeFive} from "react-icons/bi";
+import {MdPlayCircleFilled} from "react-icons/md";
+import {useStoreActions} from "easy-peasy";
 import SongCard from "./SongCard";
 
-
 const image = "https://media.fashionnetwork.com/m/4a47/a367/840d/0877/429b/e8e3/2827/582e/0f41/a5c0/a5c0.jpg"
-const songs = new Array(10)
 
-export default function SongsTable() {
+export default function SongsTable({songs}) {
+    const playSongs = useStoreActions((store: any) => store.changeActiveSongs)
+    const setActiveSong = useStoreActions((store: any) => store.changeActiveSong)
+
+    const handlePlay = (activeSong?) => {
+        setActiveSong(activeSong || songs[0])
+        playSongs(songs)
+    }
+
     return (
         <Box>
             <Flex direction="column" maxWidth="1889px">
                 <Flex color="white" padding="24px 32px" align="center">
-                    <Flex
-                        justify="center"
-                        align="center"
-                        padding="14px"
-                        bg="#1ed760"
-                        borderRadius="100%"
-                        width="56px"
-                        height="56px"
+                    <IconButton
                         marginRight="32px"
-                    >
-                        <Icon width="20px" height="18px" as={GrPlayFill}/>
-                    </Flex>
-
+                        aria-label="play"
+                        variant="link"
+                        color="#1ed760"
+                        isRound
+                        fontSize="66px"
+                        transitionDuration="0ms"
+                        icon={<MdPlayCircleFilled/>}
+                        onClick={() => handlePlay()}
+                    />
                     <Text fontSize="20px" color="#a7a7a7" letterSpacing="-1px">• • •</Text>
                 </Flex>
                 {/* SONGS TABLE TODO : # | TITRE | ALBUM | AJOUTÉ LE | TIME */}
@@ -56,16 +61,17 @@ export default function SongsTable() {
                     {/* SONGS */}
                     <Flex direction="column" color="white">
 
-                        {songs.fill(1).map(() => (
+                        {songs.map((song, key) => (
                             <SongCard
-                                number={1}
+                                key={song.id}
+                                number={key + 1}
+                                song={song}
                                 image={image}
-                                title="Titre"
-                                artist="Artiste"
                                 album={"Nom de l'album"}
-                                date="15 avr. 2022"
-                                duration="3:28"
+                                onClick={() => handlePlay(song)}
+
                             />
+
                         ))}
 
                     </Flex>
