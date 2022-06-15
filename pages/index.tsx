@@ -19,7 +19,7 @@ export default function Home({artists}) {
             title={`${user?.firstName} ${user?.lastName}`}
             description={`${user?.playlistCount} playlist(s) publique(s) • 3 abonnés • 36 abonnés`}
         >
-            <Box color="white" paddingX="16px">
+            <Box color="white" paddingX="32px">
                 <Flex align="center" padding="24px 0">
                     <Text fontSize="20px" color="#a7a7a7" letterSpacing="-1px">• • •</Text>
                 </Flex>
@@ -27,7 +27,7 @@ export default function Home({artists}) {
                     <Text fontSize="24px" lineHeight="1.75rem" fontWeight="bold">Top artistes du mois</Text>
                     <Text color="#a7a7a7" fontSize="14px">Visibles uniquement par vous</Text>
                 </Box>
-                <Flex  overflowX="auto"> {artists.map(artist => (
+                <Flex  columnGap="24px" overflowX="auto"> {artists.map(artist => (
                     <ArtistCard key={artist.id} artist={artist}/>
                 ))}
                 </Flex>

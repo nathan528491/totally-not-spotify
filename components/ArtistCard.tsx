@@ -13,8 +13,12 @@ export default function ArtistCard({artist}) {
             basis="175px"
             shrink="0"
             bg="#181818"
-            marginX="10px"
             borderRadius="6px"
+            transition="background-color 0.3s ease"
+            transitionDuration="200ms"
+            _hover={{
+                bg: "#282828",
+            }}
 
         >
             <Image
