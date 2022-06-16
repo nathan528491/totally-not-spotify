@@ -124,12 +124,12 @@
     height: 16px;
     width: 16px;
 }
+
 .checkBox:checked {
     background-color:#169b45;
 }
 
 .paragraphNoAccount {
-    /*align-self: center;*/
     text-align: center;
     font-size: 1.125rem;
     line-height: 1.5rem;

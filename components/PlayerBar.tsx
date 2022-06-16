@@ -1,8 +1,8 @@
-import {Box, Flex, Text} from "@chakra-ui/layout";
-import {Image} from "@chakra-ui/react";
-import {FiHeart} from "react-icons/fi";
-import {useStoreState} from "easy-peasy";
-import Player from "./Player";
+import {Box, Flex, Text} from "@chakra-ui/layout"
+import {Image} from "@chakra-ui/react"
+import {FiHeart} from "react-icons/fi"
+import {useStoreState} from "easy-peasy"
+import Player from "./Player"
 
 export default function PlayerBar() {
     const image = "https://media.fashionnetwork.com/m/4a47/a367/840d/0877/429b/e8e3/2827/582e/0f41/a5c0/a5c0.jpg"
@@ -25,13 +25,11 @@ export default function PlayerBar() {
                             </Box>
                         </Flex>
                     ): null}
-
                 </Box>
                 <Box width="40%" textAlign="center" height="56px">
                     {activeSong ? (
                         <Player songs={songs} activeSong={activeSong} />
                     ): null}
-
                 </Box>
                 <Box width="30%" textAlign="center" >three</Box>
             </Flex>

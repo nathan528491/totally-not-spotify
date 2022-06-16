@@ -34,4 +34,4 @@ module.exports = {
         "prefer-arrow-callback": "off",
         "react/jsx-filename-extension": "off"
     },
-};
+}

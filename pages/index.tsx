@@ -1,12 +1,12 @@
-import {Box, Flex, Text} from '@chakra-ui/layout'
-import prisma from "../lib/prisma";
-import {useMe} from "../lib/hooks";
-import GradientLayout from "../components/GradientLayout";
-import ArtistCard from "../components/ArtistCard";
-
-const image = "https://media.fashionnetwork.com/m/4a47/a367/840d/0877/429b/e8e3/2827/582e/0f41/a5c0/a5c0.jpg"
+import {Box, Flex, Text} from "@chakra-ui/layout"
+import prisma from "../lib/prisma"
+import {useMe} from "../lib/hooks"
+import GradientLayout from "../components/GradientLayout"
+import ArtistCard from "../components/ArtistCard"
+import SongCard from "../components/SongCard"
 
 export default function Home({artists}) {
+    const image = "https://media.fashionnetwork.com/m/4a47/a367/840d/0877/429b/e8e3/2827/582e/0f41/a5c0/a5c0.jpg"
     const {user} = useMe()
 
     return (
@@ -34,9 +34,10 @@ export default function Home({artists}) {
                     <Text fontSize="24px" lineHeight="1.75rem" fontWeight="bold">Top titres du mois</Text>
                     <Text marginBottom="16px" color="#a7a7a7" fontSize="14px">Visibles uniquement par vous</Text>
 
-                    {/*
+
                     {new Array(4).fill(1).map((_, index) => (
                         <SongCard
+                            key={index + 1}
                             number={index + 1}
                             song={ {
                                 name: "Song name",
@@ -46,9 +47,10 @@ export default function Home({artists}) {
                             }}
                             image={image}
                             album="Nom de l'album"
+                            onClick={() => {}}
                         />
                     ))}
-                     */}
+
                 </Box>
             </Box>
         </GradientLayout>

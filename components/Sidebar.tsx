@@ -1,42 +1,38 @@
-import {Box, List, ListItem, ListIcon, Divider, LinkBox, LinkOverlay} from "@chakra-ui/layout";
-import {MdHome, MdLibraryMusic, MdPlaylistAdd, MdFavorite, MdBookmark} from "react-icons/md";
-import {FiSearch} from "react-icons/fi";
-import NextImage from "next/image";
-import NextLink from "next/link";
+import {Box, List, ListItem, ListIcon, Divider, LinkBox, LinkOverlay} from "@chakra-ui/layout"
+import {MdHome, MdLibraryMusic, MdPlaylistAdd, MdFavorite, MdBookmark} from "react-icons/md"
+import {FiSearch} from "react-icons/fi"
+import NextImage from "next/image"
+import NextLink from "next/link"
 import styles from "../styles/PlayerLaout.module.css"
-import {usePlaylist} from "../lib/hooks";
+import {usePlaylist} from "../lib/hooks"
 
 const navMenu = [{
-    name: 'Accueil',
+    name: "Accueil",
     icon: MdHome,
-    route: '/'
+    route: "/"
 }, {
-    name: 'Rechercher',
+    name: "Rechercher",
     icon: FiSearch,
-    route: '/search'
+    route: "/search"
 }, {
-    name: 'Bibliothèque',
+    name: "Bibliothèque",
     icon: MdLibraryMusic,
-    route: '/library'
+    route: "/library"
 }]
 
 const musicMenu = [{
-    name: 'Créer une playlist',
+    name: "Créer une playlist",
     icon: MdPlaylistAdd,
-    route: '/'
+    route: "/"
 }, {
-    name: 'Titres likés',
+    name: "Titres likés",
     icon: MdFavorite,
-    route: '/favorites'
+    route: "/favorites"
 }, {
-    name: 'Vos épisodes',
+    name: "Vos épisodes",
     icon: MdBookmark,
-    route: '/episodes'
+    route: "/episodes"
 }]
-
-// const playlists = new Array(30).fill(1).map((_, i) => `Playlist ${i+1}`)
-
-
 
 export default function Sidebar() {
     const {playlists} = usePlaylist()
@@ -122,7 +118,7 @@ export default function Sidebar() {
                                     <Box paddingX="24px" height="100%">
                                         <LinkBox className={styles.playlistLinkBox}>
                                             <NextLink href={{
-                                                pathname: '/playlist/[id]',
+                                                pathname: "/playlist/[id]",
                                                 query: {id: playlist.id}
                                             }} passHref>
                                                 <LinkOverlay className={styles.playlistLinkOverlay}>
@@ -131,12 +127,9 @@ export default function Sidebar() {
                                             </NextLink>
                                         </LinkBox>
                                     </Box>
-
                                 </ListItem>
                             ))}
                         </List>
-
-
                     </Box>
                 </Box>
             </Box>

@@ -1,13 +1,12 @@
 import {Box, Flex, Text} from "@chakra-ui/layout"
-import {Icon, IconButton} from '@chakra-ui/react'
-import {BiTimeFive} from "react-icons/bi";
-import {MdPlayCircleFilled} from "react-icons/md";
-import {useStoreActions} from "easy-peasy";
-import SongCard from "./SongCard";
-
-const image = "https://media.fashionnetwork.com/m/4a47/a367/840d/0877/429b/e8e3/2827/582e/0f41/a5c0/a5c0.jpg"
+import {Icon, IconButton} from "@chakra-ui/react"
+import {BiTimeFive} from "react-icons/bi"
+import {MdPlayCircleFilled} from "react-icons/md"
+import {useStoreActions} from "easy-peasy"
+import SongCard from "./SongCard"
 
 export default function SongsTable({songs}) {
+    const image = "https://media.fashionnetwork.com/m/4a47/a367/840d/0877/429b/e8e3/2827/582e/0f41/a5c0/a5c0.jpg"
     const playSongs = useStoreActions((store: any) => store.changeActiveSongs)
     const setActiveSong = useStoreActions((store: any) => store.changeActiveSong)
 
@@ -69,15 +68,11 @@ export default function SongsTable({songs}) {
                                 image={image}
                                 album={"Nom de l'album"}
                                 onClick={() => handlePlay(song)}
-
                             />
-
                         ))}
-
                     </Flex>
                 </Flex>
             </Flex>
         </Box>
-
     )
 }

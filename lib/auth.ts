@@ -1,7 +1,6 @@
-import {NextApiRequest, NextApiResponse} from "next";
-import jwt from 'jsonwebtoken'
+import {NextApiRequest, NextApiResponse} from "next"
+import jwt from "jsonwebtoken"
 import prisma from "./prisma"
-
 
 export const validateRoute = (handler) => {
     return async (req: NextApiRequest, res: NextApiResponse) => {
@@ -11,17 +10,17 @@ export const validateRoute = (handler) => {
             let user
 
             try {
-                const { id } = jwt.verify(token, 'hello')
+                const {id} = jwt.verify(token, "hello")
                 user = await prisma.user.findUnique({
-                    where: { id },
+                    where: {id},
                 })
 
                 if (!user) {
-                    throw new Error('User Not Found')
+                    throw new Error("User Not Found")
                 }
             } catch (error) {
                 res.status(401)
-                res.json({ error: 'Not Authorizied' })
+                res.json({error: "Not Authorized"})
                 return
             }
 
@@ -29,10 +28,10 @@ export const validateRoute = (handler) => {
         }
 
         res.status(401)
-        res.json({ error: 'Not Authorizied' })
+        res.json({error: "Not Authorized"})
     }
 }
 
 export const validateToken = token => {
-    return jwt.verify(token, 'hello')
+    return jwt.verify(token, "hello")
 }

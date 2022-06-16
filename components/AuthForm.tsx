@@ -1,29 +1,24 @@
-import {Box, Flex, LinkOverlay, LinkBox} from '@chakra-ui/layout'
-import {useRouter} from 'next/router'
-import {FC, useState} from "react";
-// import {useSWRConfig} from "swr";
-import NextImage from "next/image";
-import {FcGoogle} from "react-icons/fc";
-import {AiFillFacebook, AiFillApple} from "react-icons/ai";
-import NextLink from "next/link";
-import styles from "../styles/AuthForm.module.css";
-import {auth} from "../lib/mutations";
-
+import {Box, Flex, LinkOverlay, LinkBox} from "@chakra-ui/layout"
+import {useRouter} from "next/router"
+import {FC, useState} from "react"
+import NextImage from "next/image"
+import {FcGoogle} from "react-icons/fc"
+import {AiFillFacebook, AiFillApple} from "react-icons/ai"
+import NextLink from "next/link"
+import styles from "../styles/AuthForm.module.css"
+import {auth} from "../lib/mutations"
 
 // eslint-disable-next-line react/function-component-definition
-const AuthForm: FC<{ mode: 'signin' | 'signup' }> = ({ mode }) => {
-// function AuthForm() {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [isLoading, setIsLoading] = useState(false)
+const AuthForm: FC<{ mode: "signin" | "signup" }> = ({ mode }) => {
+
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
     const router = useRouter()
 
     const handleSubmit = async (e) => {
         e.preventDefault()
-        setIsLoading(true)
-
         await auth(mode, {email, password})
-        await router.push('/')
+        await router.push("/")
     }
 
     return (
@@ -39,7 +34,6 @@ const AuthForm: FC<{ mode: 'signin' | 'signup' }> = ({ mode }) => {
             <Flex padding="10px" alignSelf="center">
                 <div>
                     <Flex rowGap="10px" direction="column" justify="center" align="stretch">
-
                         <Flex align="center" className={`${styles.facebookButton} ${styles.buttonGroup}`}>
                             <span
                                 className={styles.spanSpan}><AiFillFacebook/></span><span>continuer avec facebook</span>
@@ -50,13 +44,11 @@ const AuthForm: FC<{ mode: 'signin' | 'signup' }> = ({ mode }) => {
                         <Flex align="center" className={`${styles.googleButton} ${styles.buttonGroup}`}>
                             <span className={styles.spanSpan}><FcGoogle/></span><span>continuer avec google</span>
                         </Flex>
-
                         <Flex align="center" justify="center">
                             <hr className={styles.divider}/>
                             <span className={styles.ouSpan}>ou</span>
                             <hr className={styles.divider}/>
                         </Flex>
-
                         <form onSubmit={handleSubmit} action="">
                             <Flex direction="column">
                                 <Box lineHeight="0" paddingBottom="12px">
@@ -74,7 +66,6 @@ const AuthForm: FC<{ mode: 'signin' | 'signup' }> = ({ mode }) => {
                                         onChange={e => setEmail(e.target.value)}
                                     />
                                 </Box>
-
                                 <Box width="100%" lineHeight="0" paddingBottom="12px">
                                     <Box lineHeight="0" paddingBottom="8px">
                                         {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
@@ -88,7 +79,6 @@ const AuthForm: FC<{ mode: 'signin' | 'signup' }> = ({ mode }) => {
                                         onChange={e => setPassword(e.target.value)}
                                         placeholder="Mot de passe"/>
                                 </Box>
-
                                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                                 <a className={styles.linkText} href="#">Mot de passe oublié ?</a>
                                 <Flex justify="space-between">
@@ -98,10 +88,8 @@ const AuthForm: FC<{ mode: 'signin' | 'signup' }> = ({ mode }) => {
                                             <span className={styles.spanSouvenir}><p>Se souvenir de moi</p></span>
                                         </Flex>
                                     </Box>
-
-
                                     <Flex>
-                                        {mode === 'signin'
+                                        {mode === "signin"
                                             ?
                                             <button type="submit" className={styles.buttonConnect}>Se Connecter</button>
                                             // eslint-disable-next-line react/no-unescaped-entities
@@ -112,7 +100,7 @@ const AuthForm: FC<{ mode: 'signin' | 'signup' }> = ({ mode }) => {
                             </Flex>
                         </form>
                         <hr className={styles.divider}/>
-                        {mode === 'signin' &&
+                        {mode === "signin" &&
                             <Box>
                                 {/* eslint-disable-next-line react/no-unescaped-entities */}
                                 <p className={styles.paragraphNoAccount}>Vous n'avez pas de compte ?</p>
@@ -124,17 +112,12 @@ const AuthForm: FC<{ mode: 'signin' | 'signup' }> = ({ mode }) => {
                                         </LinkOverlay>
                                     </NextLink>
                                 </LinkBox>
-
                             </Box>
                         }
                     </Flex>
-
                 </div>
             </Flex>
-
         </Flex>
-
-
     )
 }
 

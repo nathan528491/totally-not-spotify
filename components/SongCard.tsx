@@ -1,6 +1,6 @@
-import {Flex, Text} from "@chakra-ui/layout";
-import {Image} from "@chakra-ui/react";
-import {formatTime, formatDate} from "../lib/formatters";
+import {Flex, Text} from "@chakra-ui/layout"
+import {Image} from "@chakra-ui/react"
+import {formatTime, formatDate} from "../lib/formatters"
 
 export default function SongCard({
     number,

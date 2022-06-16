@@ -16,10 +16,7 @@ export default function ArtistCard({artist}) {
             borderRadius="6px"
             transition="background-color 0.3s ease"
             transitionDuration="200ms"
-            _hover={{
-                bg: "#282828",
-            }}
-
+            _hover={{bg: "#282828"}}
         >
             <Image
                 borderRadius="100%"
@@ -32,7 +29,6 @@ export default function ArtistCard({artist}) {
                 <Text fontSize="1rem" fontWeight="bold">{artist.name}</Text>
                 <Text fontSize="14px" color="#a7a7a7">Artiste</Text>
             </Box>
-
         </Flex>
     )
 }

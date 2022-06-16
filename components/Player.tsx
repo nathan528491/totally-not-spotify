@@ -16,7 +16,6 @@ import {useStoreActions} from "easy-peasy"
 import styles from "../styles/Player.module.css"
 import {formatTime} from "../lib/formatters"
 
-
 export default function Player({songs, activeSong}) {
 
     // const sliderTrack = document.getElementById("player-range")
@@ -154,7 +153,6 @@ export default function Player({songs, activeSong}) {
                         transitionDuration="0ms"
                         icon={<MdPauseCircleFilled/>}
                     />
-
                 ) : (
                     <IconButton
                         onClick={() => setPlayState(true)}
@@ -167,8 +165,6 @@ export default function Player({songs, activeSong}) {
                         icon={<MdPlayCircleFilled/>}
                     />
                 )}
-
-
                 <IconButton
                     onClick={nextSong}
                     aria-label="skip-next"
@@ -187,14 +183,13 @@ export default function Player({songs, activeSong}) {
                     transitionDuration="0ms"
                     icon={<MdRepeat/>}/>
             </Center>
-
             <Box color="#a7a7a7">
                 <Flex justify="center" align="center" marginTop="6px">
                     <Box width="10%">
                         <Text fontSize="11px">{formatTime(seek)}</Text>
                     </Box>
                     {/* eslint-disable-next-line jsx-a11y/aria-proptypes */}
-                    <RangeSlider aria-label={['min', 'max']}
+                    <RangeSlider aria-label={["min", "max"]}
                         width="80%"
                         step={0.1}
                         min={0}
@@ -217,5 +212,4 @@ export default function Player({songs, activeSong}) {
             </Box>
         </Box>
     )
-
 }

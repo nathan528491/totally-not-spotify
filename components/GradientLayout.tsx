@@ -19,7 +19,6 @@ export default function GradientLayout({
             <Flex
                 bg={`${color}.600`}
                 padding="0 32px 24px"
-                // width="100vw"
                 align="end"
                 height="30vh"
                 maxHeight="500px"
@@ -31,7 +30,7 @@ export default function GradientLayout({
                         minWidth="232"
                         boxShadow="2xl"
                         src={image}
-                        borderRadius={roundImage ? '100%' : '3px'}
+                        borderRadius={roundImage ? "100%" : "3px"}
                     />
                 </Box>
                 <Box color="white">
@@ -52,7 +51,6 @@ export default function GradientLayout({
                     >{title}</Text>
                     <Text fontSize="sm" marginTop="8px">{description}</Text>
                 </Box>
-
             </Flex>
             <Box paddingBottom="50px"
                 bgGradient={`linear(${color}.700 0%, #121212 250px)`}>

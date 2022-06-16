@@ -20,6 +20,7 @@
     color:#b3b3b3;
     transition: color 0.15s ease-in-out;
 }
+
 .navMenuLinkBox:hover {
     color: #fff;
     transition: color 0.15s ease-in-out;
@@ -36,12 +37,7 @@
     align-items: center;
     width: 100%;
     height: 100%;
-
 }
-
-
-
-
 
 .musicMenuList {
     height: calc(100vh - 322px);
@@ -53,6 +49,7 @@
     width: 100%;
     height: 40px;
 }
+
 .musicMenuLinkBox {
     width: 100%;
     height: 100%;
@@ -71,6 +68,7 @@
     font-size: 24px;
     margin-right: 16px !important;
 }
+
 .musicMenuLinkOverlay {
     display: flex;
     align-items: center;
@@ -89,6 +87,7 @@
     color: #b3b3b3;
     transition: color;
 }
+
 .playlistLinkBox:hover {
     color: #fff;
     transition: color;
