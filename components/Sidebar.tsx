@@ -7,31 +7,31 @@ import styles from "../styles/PlayerLaout.module.css"
 import {usePlaylist} from "../lib/hooks"
 
 const navMenu = [{
-    name: "Accueil",
+    name: "Profil",
     icon: MdHome,
     route: "/"
 }, {
     name: "Rechercher",
     icon: FiSearch,
-    route: "/search"
+    route: "#"
 }, {
     name: "Bibliothèque",
     icon: MdLibraryMusic,
-    route: "/library"
+    route: "#"
 }]
 
 const musicMenu = [{
     name: "Créer une playlist",
     icon: MdPlaylistAdd,
-    route: "/"
+    route: "#"
 }, {
     name: "Titres likés",
     icon: MdFavorite,
-    route: "/favorites"
+    route: "#"
 }, {
     name: "Vos épisodes",
     icon: MdBookmark,
-    route: "/episodes"
+    route: "#"
 }]
 
 export default function Sidebar() {

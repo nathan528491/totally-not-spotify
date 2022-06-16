@@ -31,7 +31,7 @@ export default function PlayerBar() {
                         <Player songs={songs} activeSong={activeSong} />
                     ): null}
                 </Box>
-                <Box width="30%" textAlign="center" >three</Box>
+                <Box width="30%" textAlign="center">[WIP] volume controls </Box>
             </Flex>
         </Box>
     )
