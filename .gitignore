@@ -31,7 +31,4 @@ yarn-error.log*
 # vercel
 .vercel
 .idea
-package-lock.json
-tsconfig.json
-next-env.d.ts
 .env
