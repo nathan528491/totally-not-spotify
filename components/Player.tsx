@@ -13,7 +13,6 @@ import ReactHowler from "react-howler"
 import {useEffect, useRef, useState} from "react"
 import {MdShuffle, MdSkipPrevious, MdSkipNext, MdPlayCircleFilled, MdPauseCircleFilled, MdRepeat} from "react-icons/md"
 import {useStoreActions} from "easy-peasy"
-import styles from "../styles/Player.module.css"
 import {formatTime} from "../lib/formatters"
 
 export default function Player({songs, activeSong}) {
@@ -149,7 +148,7 @@ export default function Player({songs, activeSong}) {
                         variant="link"
                         fontSize="36px"
                         color="white"
-                        className={styles.playButton}
+                        _hover={{ transform: "scale(1.06)"}}
                         transitionDuration="0ms"
                         icon={<MdPauseCircleFilled/>}
                     />
@@ -160,7 +159,7 @@ export default function Player({songs, activeSong}) {
                         variant="link"
                         fontSize="36px"
                         color="white"
-                        className={styles.playButton}
+                        _hover={{ transform: "scale(1.06)"}}
                         transitionDuration="0ms"
                         icon={<MdPlayCircleFilled/>}
                     />
@@ -190,6 +189,7 @@ export default function Player({songs, activeSong}) {
                     </Box>
                     {/* eslint-disable-next-line jsx-a11y/aria-proptypes */}
                     <RangeSlider aria-label={["min", "max"]}
+                        role="group"
                         width="80%"
                         step={0.1}
                         min={0}
@@ -201,9 +201,9 @@ export default function Player({songs, activeSong}) {
                         onChangeEnd={() => setIsSeeking(false)}
                     >
                         <RangeSliderTrack id="sliderTrack" bg="hsla(0,0%,100%,0.3)" paddingY="1px">
-                            <RangeSliderFilledTrack paddingY="1px" bg="white" _hover={{bg: "#1db954"}}/>
+                            <RangeSliderFilledTrack paddingY="1px" bg="white" _groupHover={{ bg: "rgb(29, 185, 84)" }} />
                         </RangeSliderTrack>
-                        <RangeSliderThumb visibility="visible" index={0} bg="white"/>
+                        <RangeSliderThumb visibility="hidden" index={0} bg="white" _groupHover={{visibility: "visible"}}/>
                     </RangeSlider>
                     <Box width="10%">
                         <Text textAlign="right" fontSize="11px">{formatTime(duration)}</Text>
