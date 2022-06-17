@@ -37,6 +37,12 @@ Run the development server:
   yarn dev
 ```
 
+Connect with those credentials:
+```bash
+email: user@test.com
+password: password
+```
+
 Open http://localhost:3000 with your browser to see the result.
 
 
