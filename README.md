@@ -2,7 +2,7 @@
 ![Logo](https://raw.githubusercontent.com/nathan528491/totally-not-spotify/main/public/logo-black.svg)
 
 
-# Totally Not Spotify 
+# [Totally Not Spotify](https://totally-not-spotify.vercel.app/)
 ![Vercel](https://vercelbadge.vercel.app/api/nathan528491/totally-not-spotify)
 
 A spotify clone created for the purpose of practicing Fullstack development. 
@@ -12,7 +12,7 @@ A spotify clone created for the purpose of practicing Fullstack development.
 Clone the project:
 
 ```bash
-  git clone https://github.com/nathan528491/totally-not-spotify
+  git clone 
 ```
 
 Go to the project directory:
@@ -38,6 +38,7 @@ Run the development server:
 ```
 
 Connect with those credentials:
+
 ```bash
 email: user@test.com
 password: password
