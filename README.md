@@ -47,6 +47,18 @@ password: password
 Open http://localhost:3000 with your browser to see the result.
 
 
+## Roadmap
+
+- Volume control
+- Fix layout, add responsiveness
+- Add album, profile picture to database schema
+- Edit profile
+- Edit, create, delete playlists
+- Create account, disconnect
+- Seamless loading with skeleton
+- Like songs
+
+
 ## Learn More
 
 #### Related course
