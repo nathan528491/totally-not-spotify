@@ -36,6 +36,7 @@ Run the development server:
   # or
   yarn dev
 ```
+Open http://localhost:3000 with your browser to see the result.
 
 Connect with those credentials:
 
@@ -44,7 +45,7 @@ email: user@test.com
 password: password
 ```
 
-Open http://localhost:3000 with your browser to see the result.
+
 
 
 ## Roadmap
